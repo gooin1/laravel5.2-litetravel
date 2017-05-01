@@ -10,10 +10,7 @@
     <!-- Fonts -->
     <link href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="http://fonts.geekzu.org/css?family=Lato:100,300,400,700">
-
-    {{-- Emoji --}}
-    <script src="https://cdn.bootcss.com/twemoji/2.2.5/2/twemoji.min.js"></script>
-
+    
     <!-- Styles -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
@@ -57,8 +54,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">🔐 登录</a></li>
-                        <li><a href="{{ url('/register') }}">🔑 注册</a></li>
+                        <li><a href="{{ url('/login') }}">登录</a></li>
+                        <li><a href="{{ url('/register') }}">注册</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
