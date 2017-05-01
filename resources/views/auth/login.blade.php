@@ -51,10 +51,11 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                     登录
+                                     登录 
                                 </button>
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">忘记密码?</a>
+                                {{-- <a class="btn btn-link" href="{{ url('/password/reset') }}">忘记密码?</a> --}}
+                                没有帐号?<a class="btn btn-link" href="{{ url('/register') }}">立即註冊</a>
                             </div>
                         </div>
                     </form>

@@ -15,7 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/map', function () {
+    return view('map.google');
+});
+
+Route::get('/map1', function () {
+    return view('map.google1');
+});
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/hotmap', 'HomeController@hotmap');
+
 Route::get('/model', 'HomeController@model');

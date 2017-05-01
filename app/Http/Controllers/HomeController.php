@@ -24,7 +24,15 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // Home 视图传入Post模型的数据
         return view('home')->withPosts(\App\Post::all());
+    }
+
+    // 热度图
+    public function hotmap()
+    {
+        // Home 视图传入Post模型的数据
+        return view('map.hotmap');
     }
 
     public function model() {
