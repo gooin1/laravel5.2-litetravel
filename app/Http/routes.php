@@ -15,8 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/map', function () {
-    return view('map.google');
+
+
+Route::get('/ip', function () {
+    return view('ip');
 });
 
 Route::get('/map1', function () {
@@ -30,3 +32,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/hotmap', 'HomeController@hotmap');
 
 Route::get('/model', 'HomeController@model');
+
+Route::get('/map', 'HomeController@baidumap');
+
+
