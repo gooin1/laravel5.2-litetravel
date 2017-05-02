@@ -114,7 +114,9 @@
     <!-- JavaScripts -->
     <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js"></script>
+    
+    {{-- <script src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script> --}}
+    {{-- <script src="https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js"></script> --}}
     
     {{-- google basic map --}}
     {{-- @include('map.js.googlemap') --}}
@@ -122,9 +124,12 @@
     {{-- baidu basic map --}}
     {{-- @include('map.js.baidumapjs') --}}
 
+
     
-    @include('map.js.googlehotmap')
+    {{-- @include('map.js.googlehotmap') --}}
+    {{-- @include('map.js.baiduhotmap') --}}
     
+@yield('js')
 
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
     
