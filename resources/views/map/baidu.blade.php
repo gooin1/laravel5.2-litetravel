@@ -28,7 +28,7 @@
 <script type="text/javascript">
     var map = new BMap.Map("map");       // 创建地图实例
     var point = new BMap.Point(user_lng, user_lat);
-    map.centerAndZoom(point, 15);             // 初始化地图，设置中心点坐标和地图级别
+    map.centerAndZoom(point, 13);             // 初始化地图，设置中心点坐标和地图级别
     map.enableScrollWheelZoom(); // 允许滚轮缩放
 
 
