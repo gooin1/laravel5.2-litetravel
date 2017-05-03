@@ -25,36 +25,36 @@
 
 // json sample
 // {
-// "status": 0,
-// "result": {
-// "location": {
-// "lng": 103.70361699999994,
-// "lat": 36.097875891785215
-// },
-// "formatted_address": "甘肃省兰州市安宁区街坊路",
-// "business": "西津西路",
-// "addressComponent": {
-// "country": "中国",
-// "country_code": 0,
-// "province": "甘肃省",
-// "city": "兰州市",
-// "district": "安宁区",
-// "adcode": "620105",
-// "street": "街坊路",
-// "street_number": "",
-// "direction": "",
-// "distance": ""
-// },
-// "pois": [],
-// "poiRegions": [
-// {
-// "direction_desc": "内",
-// "name": "甘肃农业大学",
-// "tag": "教育培训"
-// }
-// ],
-// "sematic_description": "甘肃农业大学内",
-// "cityCode": 36
+//     "status": 0,
+//     "result": {
+//     "location": {
+//         "lng": 103.70368799999994,
+//             "lat": 36.09769589178347
+//     },
+//     "formatted_address": "甘肃省兰州市安宁区街坊路",
+//         "business": "西津西路",
+//         "addressComponent": {
+//         "country": "中国",
+//             "country_code": 0,
+//             "province": "甘肃省",
+//             "city": "兰州市",
+//             "district": "安宁区",
+//             "adcode": "620105",
+//             "street": "街坊路",
+//             "street_number": "",
+//             "direction": "",
+//             "distance": ""
+//     },
+//     "pois": [],
+//         "poiRegions": [
+//         {
+//             "direction_desc": "内",
+//             "name": "甘肃农业大学",
+//             "tag": "教育培训"
+//         }
+//     ],
+//         "sematic_description": "甘肃农业大学内",
+//         "cityCode": 36
 // }
 // }
 
