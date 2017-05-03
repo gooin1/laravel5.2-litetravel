@@ -75,8 +75,15 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">首页</a></li>
-                    <li><a href="{{ url('/hotmap') }}">景区热度图</a></li>
+                    <li><a href="{{ url('/home') }}">精选游记</a></li>
+                     @if (Auth::guest())
+                        <li><a href="{{ url('/login') }}">登录</a>查看我的记录</li>
+                    @else
+                        <li>{{ Auth::user()->name }} 的记录</li>
+                    @endif
+
+                    <li><a href="{{ url('/users/{{id}}') }}">我的一堆东西</a></li>
+                    <li><a href="{{ url('/map') }}">地图</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
