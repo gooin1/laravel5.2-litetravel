@@ -14,7 +14,7 @@ class articleSeeder extends Seeder
         // 游记模拟数据
         $data = [];
 
-        for ($i = 1; $i < 11; $i ++){
+        for ($i = 1; $i < 12; $i ++){
             $tmp = [];
             $tmp['title'] = '游记 #'. $i;
             $tmp['content'] = '内容内容内容内容内容内容内容内容内容内容内容 #'. $i;

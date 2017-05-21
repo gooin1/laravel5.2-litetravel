@@ -35,4 +35,11 @@ Route::get('/model', 'HomeController@model');
 
 Route::get('/map', 'HomeController@baidumap');
 
+Route::get('/road', 'HomeController@road');
+
+Route::get('/about', function() {
+    return view('about');
+});
+
+
 

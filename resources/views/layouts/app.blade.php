@@ -83,7 +83,8 @@
                         <li><a>{{ Auth::user()->name }} 的记录</a></li>
                     @endif
 
-                    <li><a href="{{ url('/map') }}">地图</a></li>
+                    <li><a href="{{ url('/map') }}">热力图</a></li>
+                    <li><a href="{{ url('/road') }}">路线规划</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

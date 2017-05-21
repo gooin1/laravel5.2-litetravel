@@ -62,6 +62,9 @@ class HomeController extends Controller
         return view('map.baidu');
         
     }
+    public function road() {
+        return view('map.road');
+    }
 
 
 }
