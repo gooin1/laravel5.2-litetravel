@@ -1,28 +1,29 @@
-
 /*
-*   根据 ip 显示经纬度 
-*/
-  var user_lng;
-  var user_lat;
-  var apiStaus;
-        // 根据浏览器定位移动地图至当前位置
-        $.ajax({
-            dataType: "json",
-            async: false,
-            url: "https://api.prprpr.me/location/",
-            }).done(function ( data ) {
-            // 大致信息
-            user_lng = data.result.location.lng;
-            user_lat = data.result.location.lat; 
-            apiStaus = data.status;
-        }); 
-        if(apiStaus !== 0){
-          console.log("定位api挂了");
-        }  
-         if(apiStaus === 0){
-          console.log("定位api ok");
-         }    
-
+ *   根据 ip 显示经纬度/位置信息
+ */
+var user_lng;
+var user_lat;
+var apiStaus;
+var user_address;
+// 根据浏览器定位移动地图至当前位置
+$.ajax({
+    dataType: "json",
+    async: false,
+    url: "https://api.prprpr.me/location/",
+}).done(function(data) {
+    // 大致信息
+    user_lng = data.result.location.lng;
+    user_lat = data.result.location.lat;
+    apiStaus = data.status;
+    user_address = data.result.formatted_address + data.result.sematic_description;
+});
+if (apiStaus !== 0) {
+    console.log("定位api挂了");
+}
+if (apiStaus === 0) {
+    console.log("定位api ok");
+}
+console.log("当前位置: " + user_address);
 // json sample
 // {
 //     "status": 0,
@@ -57,6 +58,3 @@
 //         "cityCode": 36
 // }
 // }
-
-
-

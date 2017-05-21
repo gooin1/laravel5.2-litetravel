@@ -22,8 +22,13 @@
         /* Sticky footer styles
         -------------------------------------------------- */
         #map {
-            height: 600px;
+            height: 500px;
         }
+         #r-result {
+            height: 500px;
+            overflow: scroll;
+        }
+        
 
         #container{height:500px;width:100%;}
 		#r-result{width:100%;}
