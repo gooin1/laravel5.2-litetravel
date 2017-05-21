@@ -6,7 +6,7 @@
     <div class="container">
         <label for="start">请输入起点(默认位置可能不准确)</label>
         <input id="start" class="form-control" type="text" placeholder="起点" name="start">
-        <label for="start">请输入终点</label>
+        <label for="start">请输入目的地</label>
         <div class="input-group">
             <input id="end" type="text" class="form-control required" placeholder="请输入目的地" name="end">
             <div class="input-group-btn">
@@ -27,8 +27,9 @@
             </div>
         </div>
         <br>
+        {{-- 提示信息 --}}
+        <div class="alert alert-warning" id="message"></div>
         {{-- 面板 --}}
-
         <div class="col-md-7">
             <div class="row">
                 <div class="">
@@ -70,21 +71,52 @@
     map.addOverlay(marker);    // 添加位置的标记
     // 在起点填入基于浏览器获取的位置
     document.getElementById('start').value = user_address;  
- 
+    $("#message").hide();
+   
+    
+    var searchBusComplete = function (results){
+            var start = document.getElementById('start').value;  
+            var end = document.getElementById('end').value; 
+            var output = "从"+ start +"到"+ end +"坐公交需要";
+			var plan = results.getPlan(0);
+			output += plan.getDuration(true) + "\n";  //获取时间
+			output += plan.getDistance(true) + "\n";  //获取距离
+            console.log(output);
+            $("#message").show().html(output);
+	}
+
+    
+      var searchDriveComplete = function (results){
+
+            var start = document.getElementById('start').value;  
+            var end = document.getElementById('end').value; 
+            var output = "从"+ start +"到"+ end +"驾车需要";
+			var plan = results.getPlan(0);
+			output += plan.getDuration(true) + "\n";                //获取时间
+            output += "总路程为：" ;
+            output += plan.getDistance(true) + "\n";             //获取距离
+            console.log(output);
+            $("#message").show().html(output);
+	}
+
     $("#bus").click(function(){
+        $("#message").empty();        
+        $("#message").hide();        
        map.clearOverlays();
         //获取起点,终点的值
         var start = document.getElementById('start').value;  
         var end = document.getElementById('end').value;  
         //console.log("目的地: " + end);
-       
 	    var transit = new BMap.TransitRoute(map, {
 		    renderOptions: {map: map ,panel: "r-result"},
+            onSearchComplete: searchBusComplete,
             policy: 0
 	    });
         transit.search(start,end);
     });
-      $("#drive").click(function(){
+        $("#drive").click(function(){
+        $("#message").empty();          
+        $("#message").hide();          
         map.clearOverlays();
         //获取起点,终点的值
         var start = document.getElementById('start').value;  
@@ -92,12 +124,14 @@
         //console.log("目的地: " + end);
 	   search(start,end); 
 		function search(start,end,route){ 
-			var driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, panel: "r-result",  autoViewport: true},policy: route});
+			var driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, panel: "r-result",  autoViewport: true}, onSearchComplete: searchDriveComplete, policy: route});
 			driving.search(start,end);
 		}
     });
 
       $("#walk").click(function(){
+        $("#message").empty();
+         $("#message").hide();  
         map.clearOverlays();
         //获取起点,终点的值
         var start = document.getElementById('start').value;  
